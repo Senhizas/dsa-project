@@ -9,6 +9,7 @@ def vwap(high, low, close, volume, length):
             tpxv_array.append(tpxv)
 
         if x >= length:
-            vwap_array.append(sum(tpxv_array[x-length:x]) / sum(volume[x-length:x]))
+            vwap_array.append(
+                sum(tpxv_array[x-length:x]) / sum(volume[x-length:x]))
 
     return vwap_array

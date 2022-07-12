@@ -62,11 +62,12 @@ def dev(source, high, low, length, slope, average, intercept):
 
     return stdDev, pearsonR, upper_dev, lower_dev
 
+
 def lin_regression(close, length):
-    s, a, i = slope(close, 100)
-    startPrice = i + s * (100 - 1)
+    s, a, i = slope(close, length)
+    startPrice = i + s * (length - 1)
     endPrice = i
-    std, pr, ud, ld = dev(close, 100, s, a, i)
+    std, pr, ud, ld = dev(close, length, s, a, i)
 
     upperMultInput = 2.0
     lowerMultInput = 2.0

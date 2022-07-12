@@ -1,11 +1,3 @@
-from numpy import average
-import vectorbt as vbt
-
-price = vbt.BinanceData.download(
-    symbols="BTCUSDT", interval="1m", start="48 hours ago", end='Now').get()
-
-close_data = list(price['Close'])
-
 def rsi(close, length):
     change = [0 for x in range(len(close) - 1)]
     gain = [0 for x in range(len(close) - 1)]
@@ -13,7 +5,7 @@ def rsi(close, length):
     average_gain = []
     average_loss = []
     rsi_array = []
-    
+
     for x in range(len(close) - 1):
         if x > 0:
             change[x] = round(close[x+1] - close[x], 2)
