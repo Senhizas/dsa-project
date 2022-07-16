@@ -1,9 +1,10 @@
-def bbands(close, length, multiplier):
+def bbands(source: list, length: int = 20, multiplier: int = 2):
     sd = []
-    for x in range(len(close) + 1):
+    
+    for x in range(len(source) + 1):
         if x >= length:
-            middle_band = round(sum(close[x-length:x]) / length, 6)
-            sample_price = close[x-length:x]
+            middle_band = round(sum(source[x-length:x]) / length, 6)
+            sample_price = source[x-length:x]
 
             for y in range(length):
                 sd.append(round((sample_price[y] - middle_band) ** 2, 6))

@@ -1,14 +1,14 @@
-def rsi(close, length):
-    change = [0 for x in range(len(close) - 1)]
-    gain = [0 for x in range(len(close) - 1)]
-    loss = [0 for x in range(len(close) - 1)]
+def rsi(source: list, length: int = 14):
+    change = [0 for x in range(len(source) - 1)]
+    gain = [0 for x in range(len(source) - 1)]
+    loss = [0 for x in range(len(source) - 1)]
     average_gain = []
     average_loss = []
     rsi_array = []
 
-    for x in range(len(close) - 1):
+    for x in range(len(source) - 1):
         if x > 0:
-            change[x] = round(close[x+1] - close[x], 2)
+            change[x] = round(source[x+1] - source[x], 2)
             if change[x] > 0:
                 gain[x] = change[x]
                 loss[x] = 0

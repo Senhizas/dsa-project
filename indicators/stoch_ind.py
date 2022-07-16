@@ -1,4 +1,4 @@
-def stoch(high, low, close, length, smooth_d):
+def stoch(high: list, low: list, close: list, length: int = 10, smooth_d: int = 10):
     k = []
     d = []
 

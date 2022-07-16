@@ -1,4 +1,4 @@
-def rma(source, length):
+def rma(source: list, length: int = 10):
     rma_array = []
     alpha = 1 / length
 

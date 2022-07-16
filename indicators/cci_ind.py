@@ -1,4 +1,4 @@
-def cci(high, low, close, length):
+def cci(high: list, low: list, close: list, length: int = 20):
     tp_array = [None for x in range(len(close))]
     sma_array = []
     abs_values = []

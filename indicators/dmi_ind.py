@@ -1,4 +1,4 @@
-def rma(source, length):
+def rma(source: list, length: int = 10):
     rma_array = []
     alpha = 1 / length
 
@@ -12,7 +12,7 @@ def rma(source, length):
 
     return rma_array
 
-def dmi(high, low, close, length):
+def dmi(high: list, low: list, close: list, length: int = 14):
     tr_array = []
     plus_dm_array = []
     minus_dm_array = []

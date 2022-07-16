@@ -1,17 +1,17 @@
-def ema(close, length):
+def ema(source: list, length: int = 10):
     smoothing_constant = 2 / (length + 1)
     ema_array = []
 
-    for x in range(len(close)):
+    for x in range(len(source)):
         if x == 0:
-            _sma = sum(close[:length]) / length
+            _sma = sum(source[:length]) / length
 
         if x == 1:
-            _ema = (close[x] - _sma) * smoothing_constant + _sma
+            _ema = (source[x] - _sma) * smoothing_constant + _sma
             ema_array.append(round(_ema, 2))
         
         if x > 1:
-            _ema = (close[x] - ema_array[-1]) * smoothing_constant + ema_array[-1]
+            _ema = (source[x] - ema_array[-1]) * smoothing_constant + ema_array[-1]
             ema_array.append(round(_ema, 2))
             
     return ema_array

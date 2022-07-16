@@ -1,4 +1,4 @@
-def psar(high, low, close, start, inc, maximum):
+def psar(high: list, low: list, close: list, start: int = 0.02, inc: int = 0.02, maximum: int = 0.2):
     sar_array = []
 
     for x in range(1, len(close)):

@@ -1,4 +1,4 @@
-def vwap(high, low, close, volume, length):
+def vwap(high: list, low: list, close: list, volume: list, length: int = 14):
     tpxv_array = []
     vwap_array = []
 
