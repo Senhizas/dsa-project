@@ -25,7 +25,6 @@ class VolatilityIndicators(OHLCV):
         tr_array = []
         atr_array = []
 
-        # runs a loop for x times where x is the length of the sample data.
         for x in range(len(self.close)):
             if x == 0:
                 # subracts the value of low from high at current index and rounds the value before appending them to tr_array
