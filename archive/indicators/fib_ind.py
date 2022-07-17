@@ -1,4 +1,4 @@
-def fibonacci_sequence(length):
+def fibonacci_sequence(length: int = 15):
     fib_seq = [None for x in range(length)]
 
     def fibonacci_value(n):
@@ -16,7 +16,7 @@ def fibonacci_sequence(length):
 
 
 def fibonacci_ratios():
-    sequence = fibonacci_sequence(15)
+    sequence = fibonacci_sequence()
     fib_ratio = []
 
     for x in range(1, 4):

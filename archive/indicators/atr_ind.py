@@ -1,4 +1,4 @@
-def atr(high, low, close, length):
+def atr(high: list, low: list, close: list, length: int = 10):
     tr_array = []
     atr_array = []
 
