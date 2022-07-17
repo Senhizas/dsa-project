@@ -12,7 +12,7 @@ class MomentumIndicators(OHLCV):
 
         super().__init__(open_, high_, low_, close_, volume_)
 
-    def cci(self, length: int = 20):
+    def cci(self, length: int = 20) -> list:
         """The Commodity Channel Index (CCI) is a technical indicator that 
         measures the difference between the current price and the historical
         average price.
@@ -47,7 +47,7 @@ class MomentumIndicators(OHLCV):
 
         return cci_array
 
-    def dmi(self, length: int = 14):
+    def dmi(self, length: int = 14) -> list:
         """The directional movement index (DMI) is an indicator that identifies 
         in which direction the price of an asset is moving. It also gauges the
         strength of the uptrend or downtrend.
@@ -111,7 +111,7 @@ class MomentumIndicators(OHLCV):
 
         return adx_array, plus_di_array, minus_di_array
 
-    def macd(self, fast_length: int = 12, slow_length: int = 26, signal_length: int = 9):
+    def macd(self, fast_length: int = 12, slow_length: int = 26, signal_length: int = 9) -> list:
         """Moving average convergence divergence (MACD) is a trend-following 
         momentum indicator that shows the relationship between two moving 
         averages of an asset's price
@@ -141,7 +141,7 @@ class MomentumIndicators(OHLCV):
 
         return macd_array, macd_signal_array, macd_histogram_array
 
-    def rsi(self, length: int = 14):
+    def rsi(self, length: int = 14) -> list:
         """The relative strength index (RSI) is a momentum indicator which 
         measures the speed and magnitude of an asset's recent price 
         changes to evaluate overvalued or undervalued conditions in the 
@@ -186,7 +186,7 @@ class MomentumIndicators(OHLCV):
 
         return rsi_array
 
-    def stoch(self, length: int = 14, smooth_d: int = 14):
+    def stoch(self, length: int = 14, smooth_d: int = 14) -> list:
         """A stochastic oscillator is a momentum indicator comparing 
         a particular closing price of a security to a range of its 
         prices over a certain period of time.
