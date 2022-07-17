@@ -1,5 +1,3 @@
-import talib as ta
-
 def multiplication_table(table_limit, multiple):
     array = [None for i in range(table_limit)]
 
@@ -27,6 +25,8 @@ def standard_deviation(data):
     std = (sum(sd) / len(data)) ** (1 / 2)
     return std
 
-a = 19030.6
-b = 19049.78
-print(max([a, b]))
+x = [1, 2, 3]
+y = [4, 5, 6]
+z = [6, 7, 9]
+for a, b, c in zip(x, y, z):
+    print(c)
