@@ -1,11 +1,11 @@
-from base import OHLCV
+from .base import OHLCV
 
 
 class OverlapStudies(OHLCV):
     """Overlap studies involve combination of indicators sometimes paired with momentum indicators
     to clarify the direction of movement of price with the help of moving averages. These price
     movements can be classified either under short-term price movements or even long-term."""
-    
+
     def __init__(self, open_: list, high_: list, low_: list, close_: list, volume_: list) -> None:
         """Initializes the class accessing properties of the parent class OHLCV"""
 
@@ -16,7 +16,7 @@ class OverlapStudies(OHLCV):
         trendlines plotted two standard deviations (positively and negatively) 
         away from a simple moving average (SMA) of a security's price, but 
         which can be adjusted to user preferences.
-        
+
         Function Args:
         source: Data Array
         length(default) = 20
@@ -45,7 +45,7 @@ class OverlapStudies(OHLCV):
         """The exponential moving average (EMA) is a type of moving average (MA) that 
         places a greater weight and significance on the most recent data points.
         See https://www.investopedia.com/terms/e/ema.asp
-        
+
         Function Args:
         source: Data Array
         length(default) = 14"""
@@ -62,9 +62,10 @@ class OverlapStudies(OHLCV):
             if x == 1:
                 _ema = (source[x] - _sma) * smoothing_constant + _sma
                 ema_array.append(round(_ema, 2))
- 
+
             if x > 1:
-                _ema = (source[x] - ema_array[-1]) * smoothing_constant + ema_array[-1]
+                _ema = (source[x] - ema_array[-1]) * \
+                    smoothing_constant + ema_array[-1]
                 ema_array.append(round(_ema, 2))
 
         return ema_array
@@ -74,7 +75,7 @@ class OverlapStudies(OHLCV):
         potential reversals in price. The indicator uses a trailing stop and reverse method 
         called "SAR," or stop and reverse, to identify suitable exit and entry points.
         See https://www.investopedia.com/terms/p/parabolicindicator.asp
-        
+
         Function Args:
         start(default) = 0.02
         inc(default) = 0.02
@@ -82,7 +83,7 @@ class OverlapStudies(OHLCV):
         Note: Acceleration Factor starts at "start" and increases by "inc", up to a "maximum"
         each time the extreme point (max_min) makes a new low or a new high as per defined by
         the function arguments """
-        
+
         sar_array = []
 
         # runs a loop for x times where x is length. However the loop starts with the initial value 1 instead of the default 0
@@ -139,7 +140,7 @@ class OverlapStudies(OHLCV):
         somewhat similar to a weighted moving average (see below) as recent 
         bars have the highest weight, while older bars get smaller weights
         See https://www.tradingcode.net/tradingview/relative-moving-average/
-        
+
         Function Args:
         source: Data Array
         length(default) = 10"""
@@ -162,7 +163,7 @@ class OverlapStudies(OHLCV):
         """The simple moving average (SMA) is formed by computing the 
         average price of an asset over a specific number of periods.
         See https://www.investopedia.com/terms/s/sma.asp
-        
+
         Function Args:
         source: Data Array
         length(default) = 10"""
@@ -179,7 +180,7 @@ class OverlapStudies(OHLCV):
         """The volume-weighted average price (VWAP) is a statistic used to 
         determine what the average price is based on both price and volume.
         See https://www.investopedia.com/terms/v/vwap.asp
-        
+
         Function Args:
         source: Data Array
         length(default) = 14"""
@@ -213,7 +214,7 @@ class OverlapStudies(OHLCV):
         weighted_array = []
         wma_array = []
 
-        # runs a loop for x times where x is length in a descending order 
+        # runs a loop for x times where x is length in a descending order
         for x in reversed(range(length)):
             weighted_array.append(x + 1)
 
@@ -224,7 +225,8 @@ class OverlapStudies(OHLCV):
                 sample_array = source[x-length:x][::-1]
                 # zip returns a zip object with the elements of each array paired together
                 # using a for loop to access paired data then multiplying the two variables to be stored in an array
-                element_wise_multiplication = [a * b for a, b in zip(sample_array, weighted_array)] 
+                element_wise_multiplication = [
+                    a * b for a, b in zip(sample_array, weighted_array)]
                 result = sum(element_wise_multiplication) / sum(weighted_array)
                 wma_array.append(round(result, 2))
 
