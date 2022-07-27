@@ -1,5 +1,5 @@
-from base import OHLCV
-from overlap import OverlapStudies
+from .base import OHLCV
+from .overlap import OverlapStudies
 
 
 class MomentumIndicators(OHLCV):
