@@ -14,7 +14,7 @@ class StatisticFunctions(OHLCV):
         below zero, the Slope indicator best resembles a momentum oscillator 
         without boundaries
         See https://school.stockcharts.com/doku.php?id=technical_indicators:slope
-        
+
         Function Args:
         source: Data Array
         length = time periods
@@ -106,7 +106,7 @@ class StatisticFunctions(OHLCV):
         """"The Fibonacci Sequence is the series of numbers: 
         0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ... The next number 
         is found by adding up the two numbers before it
-        
+
         Function Args:
         length(default) = 15; length of the fibonacci sequence"""
 
