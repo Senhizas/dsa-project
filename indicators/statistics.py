@@ -1,4 +1,4 @@
-from base import OHLCV
+from .base import OHLCV
 
 
 class StatisticFunctions(OHLCV):

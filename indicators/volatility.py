@@ -1,8 +1,8 @@
-from base import OHLCV
+from .base import OHLCV
 
 
 class VolatilityIndicators(OHLCV):
-    """The volatility indicator is a technical tool that measures how far security
+    """Volatility indicators are technical tools that measure how far an asset price
     stretches away from its mean price, higher and lower. It computes the dispersion 
     of returns over time in a visual format that technicians use to gauge whether 
     this mathematical input is increasing or decreasing."""
