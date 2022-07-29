@@ -11,7 +11,8 @@ class OverlapStudies(OHLCV):
 
         super().__init__(open_, high_, low_, close_, volume_)
 
-    def bbands(self, source: list, length: int = 20, multiplier: int = 2) -> list:
+    @classmethod
+    def bbands(cls, source: list, length: int = 20, multiplier: int = 2) -> list:
         """A Bollinger Band is a technical analysis tool defined by a set of 
         trendlines plotted two standard deviations (positively and negatively) 
         away from a simple moving average (SMA) of a security's price, but 
@@ -41,7 +42,8 @@ class OverlapStudies(OHLCV):
 
         return upper_band, middle_band, lower_band
 
-    def ema(self, source: list, length: int = 10) -> list:
+    @classmethod
+    def ema(cls, source: list, length: int = 10) -> list:
         """The exponential moving average (EMA) is a type of moving average (MA) that 
         places a greater weight and significance on the most recent data points.
         See https://www.investopedia.com/terms/e/ema.asp
@@ -134,7 +136,8 @@ class OverlapStudies(OHLCV):
 
         return sar_array
 
-    def rma(self, source: list, length: int = 10) -> list:
+    @classmethod
+    def rma(cls, source: list, length: int = 10) -> list:
         """The relative moving average (RMA) is based on a simple moving
         average where the weighting factors decrease exponentially. It is
         somewhat similar to a weighted moving average (see below) as recent 
@@ -159,7 +162,8 @@ class OverlapStudies(OHLCV):
 
         return rma_array
 
-    def sma(self, source: list, length: int = 10) -> list:
+    @classmethod
+    def sma(cls, source: list, length: int = 10) -> list:
         """The simple moving average (SMA) is formed by computing the 
         average price of an asset over a specific number of periods.
         See https://www.investopedia.com/terms/s/sma.asp
@@ -200,7 +204,8 @@ class OverlapStudies(OHLCV):
 
         return vwap_array
 
-    def wma(self, source: list, length: int = 10) -> list:
+    @classmethod
+    def wma(cls, source: list, length: int = 10) -> list:
         """The weighted moving average (WMA) is a technical indicator that assigns a greater 
         weighting to the most recent data points, and less weighting to data points in the 
         distant past. The WMA is obtained by multiplying each number in the data set by a 
