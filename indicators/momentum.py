@@ -214,7 +214,6 @@ class MomentumIndicators(OHLCV):
 
         for x in range(len(k) + 1):
             if x >= smooth_d:
-                print(len(k[x-3:x]))
                 d.append(sum(k[x-3:x]) / 3)
 
         return k, d
