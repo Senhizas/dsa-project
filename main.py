@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-from coins_data import *
+from sample_data import *
 
 
 def linear_insert(array, k, item) -> list:
